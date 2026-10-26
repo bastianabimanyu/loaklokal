@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary: #3d7188;
+    --primary-dark: #2a5264;
+    --text: #333;
+    --muted: #667781;
+    --white: #fff;
+}
+
+html {
+    min-height: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 24px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #9bb8cc, #245775);
+    color: var(--text);
+}
+
+/* Container halaman */
+.container {
+    width: 100%;
+    max-width: 440px;
+    margin: auto;
+}
+
+/* Card membungkus seluruh konten */
+.wrap-registrasi {
+    width: 100%;
+    padding: 30px;
+    background: rgba(220, 225, 230, 0.88);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Header dan tombol kembali */
+.header-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.back-btn:hover {
+    background: rgba(61, 113, 136, 0.12);
+}
+
+.back-btn i {
+    font-size: 24px;
+}
+
+.header-top h1 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+/* Judul jika berada langsung di dalam card */
+.wrap-registrasi > h1 {
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.wrap-registrasi > p {
+    margin: 6px 0 18px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    margin: 18px 0 22px;
+    background: rgba(61, 113, 136, 0.25);
+}
+
+/* Form */
+.form-group {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    margin: 0 0 7px 8px;
+    color: #444;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"] {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    padding: 11px 16px;
+    background: var(--white);
+    color: var(--text);
+    border: 1px solid #e0e5e8;
+    border-radius: 999px;
+    outline: none;
+    font-size: 13px;
+    line-height: 1.5;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+.form-group input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(61, 113, 136, 0.15);
+}
+
+/* Upload KTP */
+.upload-section {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 8px 0 22px;
+    width: 100%;
+}
+
+.upload-box {
+    position: relative;
+    flex: 0 0 112px;
+    width: 112px;
+    height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #fff;
+    border: 1px dashed #9aabb5;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.upload-box input[type="file"] {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upload-icon-img {
+    width: 45%;
+    max-height: 70%;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.preview-img {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #fff;
+    pointer-events: none;
+}
+
+.upload-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+}
+
+.upload-info p {
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.btn-upload {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 36px;
+    max-width: 100%;
+    padding: 9px 16px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-upload:hover {
+    background: var(--primary-dark);
+}
+
+.status-text {
+    min-height: 15px;
+    font-size: 11px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.status-error {
+    color: #b91c1c;
+}
+
+.status-success {
+    color: #166534;
+}
+
+/* Pesan error */
+.error-message {
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 11px 14px;
+    color: #7f1d1d;
+    background: #fee2e2;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    font-size: 12px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* Tombol daftar */
+.submit-container {
+    width: 100%;
+    text-align: center;
+}
+
+.btn-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 44px;
+    padding: 12px 20px;
+    background: var(--white);
+    color: #333;
+    border: none;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn-submit:hover:not(:disabled) {
+    background: #f0f0f0;
+    transform: translateY(-1px);
+}
+
+.btn-submit:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* Tablet dan desktop */
+@media (min-width: 768px) {
+    .container {
+        max-width: 460px;
+    }
+
+    .wrap-registrasi {
+        padding: 34px;
+    }
+}
+
+/* HP */
+@media (max-width: 480px) {
+    body {
+        padding: 18px 14px;
+        align-items: flex-start;
+    }
+
+    .container {
+        max-width: 420px;
+    }
+
+    .wrap-registrasi {
+        padding: 22px 18px;
+        border-radius: 24px;
+    }
+
+    .header-top {
+        gap: 9px;
+        margin-bottom: 16px;
+    }
+
+    .header-top h1 {
+        font-size: 22px;
+    }
+
+    .line {
+        margin: 15px 0 19px;
+    }
+
+    .form-group {
+        margin-bottom: 14px;
+    }
+
+    .upload-section {
+        gap: 11px;
+    }
+
+    .upload-box {
+        flex-basis: 96px;
+        width: 96px;
+        height: 76px;
+    }
+
+    .btn-upload {
+        padding: 8px 12px;
+        font-size: 10px;
+    }
+}
+
+/* HP sangat kecil */
+@media (max-width: 350px) {
+    .wrap-registrasi {
+        padding: 18px 14px;
+        border-radius: 20px;
+    }
+
+    .header-top h1 {
+        font-size: 20px;
+    }
+
+    .upload-box {
+        flex-basis: 80px;
+        width: 80px;
+        height: 70px;
+    }
+
+    .upload-section {
+        gap: 9px;
+    }
+}
+
+/* Layar pendek */
+@media (max-height: 600px) {
+    body {
+        align-items: flex-start;
+    }
+
+    .container {
+        margin: 8px auto;
+    }
+}

@@ -1,0 +1,551 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+.detail-main,
+.header-detail,
+.detail-main *,
+.header-detail * {
+    box-sizing: border-box;
+}
+
+.header-detail {
+    position: relative;
+    width: 100%;
+    min-height: 112px;
+    padding: 20px 5%;
+    background: #176b87;
+    border-radius: 0 0 20px 20px;
+    color: #fff;
+}
+
+.mainwrap-header {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.wrap-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-height: 70px;
+}
+
+.detail-back-button {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff;
+    color: #176b87;
+    font-size: 17px;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.detail-back-button:hover {
+    transform: translateX(-3px);
+    background: #eaf5f8;
+}
+
+.detail-brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.logoweb-detailbarang {
+    display: block;
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+}
+
+.detail-brand h2 {
+    margin: 0;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Konten utama */
+
+.detail-main {
+    min-height: calc(100vh - 112px);
+    padding: 32px 20px 60px;
+    background: #f0f4f7;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+.detail-page-container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.detail-breadcrumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 20px;
+    color: #617083;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.detail-breadcrumb:hover {
+    color: #176b87;
+}
+
+.detail-card {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #e8edf1;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+/* Foto barang */
+
+.detail-image {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 400px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #e8edf1;
+}
+
+.detail-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.detail-category-badge {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    padding: 8px 13px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #176b87;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+/* Detail informasi */
+
+.detail-info {
+    padding: 30px;
+}
+
+.detail-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.detail-condition,
+.detail-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.detail-condition {
+    color: #198754;
+}
+
+.detail-date {
+    color: #8792a1;
+}
+
+.detail-title {
+    margin: 0 0 13px;
+    color: #202b3c;
+    font-family: 'Poppins', sans-serif;
+    font-size: 27px;
+    font-weight: 700;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.detail-price-loc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.detail-price {
+    display: flex;
+    align-items: center;
+}
+
+.price-tag {
+    color: #e65100;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.detail-location {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    color: #647184;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.detail-location i {
+    margin-top: 4px;
+    color: #176b87;
+}
+
+.detail-info hr {
+    height: 1px;
+    margin: 24px 0;
+    border: 0;
+    background: #e8edf1;
+}
+
+/* Jenis transaksi */
+
+.detail-transaction {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 16px;
+    border: 1px solid #e0edf1;
+    border-radius: 12px;
+    background: #f4fafb;
+}
+
+.detail-transaction > i {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: #dff1f5;
+    color: #176b87;
+    font-size: 17px;
+}
+
+.detail-transaction div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.detail-transaction span {
+    color: #84909f;
+    font-size: 11px;
+}
+
+.detail-transaction strong {
+    color: #26384c;
+    font-size: 14px;
+}
+
+/* Deskripsi */
+
+.detail-description-section {
+    margin-top: 25px;
+}
+
+.detail-description-section h2,
+.seller-section > h2 {
+    margin: 0 0 14px;
+    color: #263447;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.detail-description-section h2 i {
+    margin-right: 7px;
+    color: #176b87;
+}
+
+.detail-desc {
+    padding: 17px;
+    border: 1px solid #edf0f3;
+    border-radius: 12px;
+    background: #f8fafb;
+    color: #657185;
+    font-size: 13px;
+    line-height: 1.9;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+/* Profil penjual */
+
+.seller-section {
+    margin-top: 25px;
+}
+
+.seller-profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    border: 1px solid #e8edf1;
+    border-radius: 13px;
+}
+
+.seller-avatar {
+    display: flex;
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #176b87;
+    color: #fff;
+    font-size: 20px;
+}
+
+.seller-profile-info {
+    min-width: 0;
+}
+
+.seller-profile-info > span {
+    color: #8591a0;
+    font-size: 11px;
+}
+
+.seller-name {
+    margin: 3px 0 5px;
+    color: #263447;
+    font-size: 14px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.seller-profile-info p {
+    margin: 0;
+    color: #718096;
+    font-size: 11px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.seller-profile-info p i {
+    margin-right: 4px;
+    color: #176b87;
+}
+
+/* Tombol aksi */
+
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.btn-action {
+    display: inline-flex;
+    flex: 1;
+    min-width: 0;
+    min-height: 47px;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn-action-primary {
+    background: #1b6979;
+    color: #fff;
+}
+
+.btn-action-primary:hover {
+    transform: translateY(-1px);
+    background: #134e5a;
+}
+
+.btn-edit {
+    background: #176b87;
+    color: #fff;
+}
+
+.btn-edit:hover {
+    background: #11546c;
+}
+
+.btn-action-disabled {
+    background: #e4e8ed;
+    color: #737e8c;
+    cursor: not-allowed;
+}
+
+.detail-cod {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin: 16px 0 0;
+    color: #718096;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.detail-cod i {
+    margin-top: 4px;
+    color: #176b87;
+}
+
+.detail-alert {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+.detail-alert-success {
+    border: 1px solid #b9e6ca;
+    background: #effaf2;
+    color: #197344;
+}
+
+/* Responsif tablet dan HP */
+
+@media (max-width: 600px) {
+    .header-detail {
+        min-height: 90px;
+        padding: 12px 18px;
+        border-radius: 0 0 15px 15px;
+    }
+
+    .wrap-header {
+        min-height: 64px;
+        gap: 13px;
+    }
+
+    .detail-back-button {
+        width: 38px;
+        height: 38px;
+        font-size: 15px;
+    }
+
+    .logoweb-detailbarang {
+        width: 45px;
+        height: 45px;
+    }
+
+    .detail-brand {
+        gap: 9px;
+    }
+
+    .detail-brand h2 {
+        font-size: 17px;
+    }
+
+    .detail-main {
+        min-height: calc(100vh - 90px);
+        padding: 22px 12px 40px;
+    }
+
+    .detail-card {
+        border-radius: 15px;
+    }
+
+    .detail-image {
+        height: 270px;
+    }
+
+    .detail-info {
+        padding: 21px 17px;
+    }
+
+    .detail-title {
+        font-size: 22px;
+    }
+
+    .price-tag {
+        font-size: 20px;
+    }
+
+    .detail-price-loc {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .detail-topline {
+        align-items: flex-start;
+    }
+
+    .detail-info hr {
+        margin: 20px 0;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .btn-action {
+        width: 100%;
+        flex: auto;
+    }
+}
+
+@media (max-width: 360px) {
+    .detail-image {
+        height: 220px;
+    }
+
+    .detail-info {
+        padding: 18px 13px;
+    }
+
+    .detail-title {
+        font-size: 20px;
+    }
+
+    .price-tag {
+        font-size: 18px;
+    }
+
+    .detail-date,
+    .detail-condition {
+        font-size: 11px;
+    }
+}

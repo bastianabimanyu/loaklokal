@@ -1,0 +1,831 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* =========================
+   DASAR HALAMAN
+========================= */
+
+.barang-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 32px 5%;
+    background-color: #f4f7f8;
+    color: #263238;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.barang-page *,
+.barang-page *::before,
+.barang-page *::after {
+    box-sizing: border-box;
+}
+
+/* =========================
+   HEADER UPLOAD
+========================= */
+
+.barang-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    margin-bottom: 28px;
+    padding: 20px 24px;
+    background-color: #176b87;
+    color: #ffffff;
+    border-radius: 14px;
+}
+
+.barang-header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.back-link {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: #176b87;
+    background-color: #ffffff;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.back-link:hover {
+    background-color: #e7f2f5;
+}
+
+/* =========================
+   KARTU FORM
+========================= */
+
+.barang-form-card {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 32px;
+    background-color: #ffffff;
+    border: 1px solid #e8edef;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(25, 65, 78, 0.06);
+}
+
+.barang-form-card h2 {
+    margin: 0;
+    color: #1c5265;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.form-description {
+    margin: 8px 0 28px;
+    color: #718087;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* =========================
+   SETIAP INPUT FORM
+========================= */
+
+.upload-form {
+    width: 100%;
+}
+
+.upload-form .form-group {
+    width: 100%;
+    margin-bottom: 22px;
+}
+
+.upload-form .form-group > label {
+    display: block;
+    margin-bottom: 9px;
+    color: #34454c;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.upload-form input[type="text"],
+.upload-form input[type="number"],
+.upload-form input[type="file"],
+.upload-form select,
+.upload-form textarea {
+    display: block;
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+    color: #263238;
+    background-color: #ffffff;
+    border: 1px solid #d6e0e4;
+    border-radius: 9px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.upload-form input::placeholder,
+.upload-form textarea::placeholder {
+    color: #9aa8ae;
+}
+
+.upload-form input:focus,
+.upload-form select:focus,
+.upload-form textarea:focus {
+    outline: none;
+    border-color: #176b87;
+    box-shadow: 0 0 0 3px rgba(23, 107, 135, 0.10);
+}
+
+.upload-form textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.7;
+}
+
+.upload-form select {
+    cursor: pointer;
+}
+
+.upload-form .form-group small {
+    display: block;
+    margin-top: 8px;
+    color: #7b8b91;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+/* =========================
+   FOTO BARANG
+========================= */
+
+.upload-form input[type="file"] {
+    padding: 10px;
+    background-color: #f9fbfc;
+    cursor: pointer;
+}
+
+.upload-form input[type="file"]::file-selector-button {
+    margin-right: 12px;
+    padding: 8px 12px;
+    color: #176b87;
+    background-color: #e8f3f6;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.upload-form input[type="file"]::file-selector-button:hover {
+    background-color: #d9ebf0;
+}
+
+.upload-form .form-group img {
+    display: block;
+    width: 100%;
+    max-height: 250px;
+    margin-bottom: 12px;
+    object-fit: contain;
+    background-color: #f2f5f6;
+    border-radius: 10px;
+}
+
+/* =========================
+   MODE TRANSAKSI
+========================= */
+
+.upload-form .radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 4px;
+}
+
+.upload-form .radio-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 13px;
+    color: #41545c;
+    background-color: #f8fafb;
+    border: 1px solid #dce5e8;
+    border-radius: 8px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.upload-form .radio-item input {
+    margin: 0;
+    accent-color: #176b87;
+    cursor: pointer;
+}
+
+/* =========================
+   PESAN VALIDASI
+========================= */
+
+.error-message {
+    display: block;
+    margin-top: 7px;
+    color: #c62828;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.alert {
+    margin-bottom: 20px;
+    padding: 13px 16px;
+    border-radius: 9px;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.alert-success {
+    color: #17633b;
+    background-color: #eaf8ef;
+    border: 1px solid #ccebd7;
+}
+
+.alert-error {
+    color: #a52222;
+    background-color: #fff0f0;
+    border: 1px solid #f4d0d0;
+}
+
+/* =========================
+   TOMBOL UPLOAD
+========================= */
+
+.upload-form .btn-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 49px;
+    margin-top: 28px;
+    padding: 13px 18px;
+    color: #ffffff;
+    background-color: #176b87;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.upload-form .btn-submit:hover {
+    background-color: #12566d;
+}
+
+.upload-form .btn-submit:active {
+    transform: scale(0.99);
+}
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 768px) {
+    .barang-page {
+        padding: 22px 4%;
+    }
+
+    .barang-header {
+        gap: 12px;
+        margin-bottom: 20px;
+        padding: 17px;
+        border-radius: 12px;
+    }
+
+    .barang-header h1 {
+        font-size: 20px;
+    }
+
+    .barang-form-card {
+        padding: 24px;
+        border-radius: 12px;
+    }
+
+    .barang-form-card h2 {
+        font-size: 19px;
+    }
+
+    .upload-form .radio-group {
+        gap: 9px;
+    }
+
+    .upload-form .radio-item {
+        padding: 9px 11px;
+    }
+}
+
+/* =========================
+   RESPONSIVE HP
+========================= */
+
+@media (max-width: 480px) {
+    .barang-page {
+        padding: 16px 12px;
+    }
+
+    .barang-header {
+        gap: 10px;
+        margin-bottom: 16px;
+        padding: 14px;
+    }
+
+    .barang-header h1 {
+        font-size: 17px;
+    }
+
+    .back-link {
+        width: 35px;
+        height: 35px;
+    }
+
+    .barang-form-card {
+        padding: 18px 15px;
+    }
+
+    .barang-form-card h2 {
+        font-size: 18px;
+    }
+
+    .form-description {
+        margin-bottom: 22px;
+        font-size: 12px;
+    }
+
+    .upload-form .form-group {
+        margin-bottom: 19px;
+    }
+
+    .upload-form .form-group > label {
+        font-size: 13px;
+    }
+
+    .upload-form input[type="text"],
+    .upload-form input[type="number"],
+    .upload-form input[type="file"],
+    .upload-form select,
+    .upload-form textarea {
+        font-size: 12px;
+    }
+
+    .upload-form .radio-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .upload-form .radio-item {
+        width: 100%;
+    }
+
+    .upload-form .btn-submit {
+        min-height: 46px;
+        font-size: 13px;
+    }
+}
+
+
+
+/* ======================================
+   HALAMAN EDIT BARANG
+====================================== */
+
+.edit-barang-page {
+    min-height: 100vh;
+    padding: 36px 20px 60px;
+    background: #f5f7fb;
+}
+
+.edit-barang-container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.edit-barang-heading {
+    margin-bottom: 24px;
+}
+
+.edit-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 20px;
+    color: #536174;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.edit-back-link:hover {
+    color: #163566;
+}
+
+.edit-barang-heading h1 {
+    margin: 0 0 8px;
+    color: #17253c;
+    font-size: clamp(26px, 4vw, 34px);
+    font-weight: 800;
+}
+
+.edit-barang-heading > p {
+    margin: 0;
+    color: #718096;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.edit-barang-card {
+    overflow: hidden;
+    border: 1px solid #e7ebf1;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 8px 30px rgba(25, 42, 70, 0.06);
+}
+
+.edit-barang-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 24px 28px;
+    border-bottom: 1px solid #edf0f4;
+}
+
+.edit-heading-icon {
+    display: grid;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border-radius: 13px;
+    background: #edf3ff;
+    color: #163566;
+    font-size: 20px;
+}
+
+.edit-barang-card-heading h2 {
+    margin: 0 0 5px;
+    color: #1b2940;
+    font-size: 18px;
+    font-weight: 750;
+}
+
+.edit-barang-card-heading p {
+    margin: 0;
+    color: #7a8595;
+    font-size: 13px;
+}
+
+.edit-barang-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: 28px;
+}
+
+.edit-form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.edit-form-group {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.edit-form-group > label:not(.edit-upload-area) {
+    color: #344054;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.edit-form-group label span {
+    color: #dc4545;
+}
+
+.edit-form-group input:not([type="file"]),
+.edit-form-group select,
+.edit-form-group textarea {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 46px;
+    padding: 12px 14px;
+    border: 1px solid #dce2eb;
+    border-radius: 10px;
+    outline: none;
+    background: #fff;
+    color: #243247;
+    font-family: inherit;
+    font-size: 14px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.edit-form-group textarea {
+    min-height: 130px;
+    resize: vertical;
+    line-height: 1.7;
+}
+
+.edit-form-group input:focus,
+.edit-form-group select:focus,
+.edit-form-group textarea:focus {
+    border-color: #315fa8;
+    box-shadow: 0 0 0 3px rgba(49, 95, 168, 0.1);
+}
+
+.edit-form-group input::placeholder,
+.edit-form-group textarea::placeholder {
+    color: #a0a9b7;
+}
+
+.edit-price-input {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid #dce2eb;
+    border-radius: 10px;
+}
+
+.edit-price-input > span {
+    padding: 0 14px;
+    color: #526176;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.edit-price-input input:not([type="file"]) {
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.edit-price-input:focus-within {
+    border-color: #315fa8;
+    box-shadow: 0 0 0 3px rgba(49, 95, 168, 0.1);
+}
+
+.edit-help-text {
+    color: #8590a0;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.edit-current-photo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+    border: 1px solid #e5eaf1;
+    border-radius: 12px;
+    background: #f9fafc;
+}
+
+.edit-current-photo img {
+    flex: 0 0 110px;
+    width: 110px;
+    height: 90px;
+    border-radius: 9px;
+    background: #edf0f5;
+    object-fit: cover;
+}
+
+.edit-current-photo strong {
+    color: #26364d;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.edit-current-photo p {
+    margin: 7px 0 0;
+    color: #788598;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.edit-upload-area {
+    display: flex;
+    min-height: 140px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 20px;
+    border: 1.5px dashed #bdcce1;
+    border-radius: 12px;
+    background: #f8faff;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.edit-upload-area:hover {
+    border-color: #315fa8;
+    background: #f0f5ff;
+}
+
+.edit-upload-area > i {
+    color: #315fa8;
+    font-size: 27px;
+}
+
+.edit-upload-area strong {
+    color: #243650;
+    font-size: 14px;
+}
+
+.edit-upload-area span {
+    max-width: 100%;
+    color: #7a879a;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.edit-photo-preview {
+    margin-top: 10px;
+}
+
+.edit-photo-preview img {
+    display: block;
+    width: 100%;
+    max-width: 260px;
+    max-height: 220px;
+    border-radius: 12px;
+    object-fit: contain;
+    background: #f1f4f8;
+}
+
+.edit-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 22px;
+    border-top: 1px solid #edf0f4;
+}
+
+.edit-btn-cancel,
+.edit-btn-submit {
+    display: inline-flex;
+    min-height: 45px;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 0 20px;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.edit-btn-cancel {
+    border: 1px solid #dce2eb;
+    background: #fff;
+    color: #475467;
+}
+
+.edit-btn-cancel:hover {
+    background: #f5f7fa;
+}
+
+.edit-btn-submit {
+    border: 0;
+    background: #163566;
+    color: #fff;
+}
+
+.edit-btn-submit:hover {
+    transform: translateY(-1px);
+    background: #214984;
+}
+
+.edit-alert {
+    margin: 22px 28px 0;
+    padding: 15px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.edit-alert-error {
+    border: 1px solid #f4caca;
+    background: #fff4f4;
+    color: #a52626;
+}
+
+.edit-alert ul {
+    margin: 8px 0 0;
+    padding-left: 20px;
+}
+
+.edit-field-error {
+    color: #c62828;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    .edit-barang-page {
+        padding: 24px 12px 40px;
+    }
+
+    .edit-barang-card {
+        border-radius: 13px;
+    }
+
+    .edit-barang-card-heading {
+        padding: 20px 16px;
+    }
+
+    .edit-barang-form {
+        gap: 20px;
+        padding: 20px 16px;
+    }
+
+    .edit-form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .edit-current-photo {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .edit-current-photo img {
+        flex-basis: 90px;
+        width: 90px;
+        height: 85px;
+    }
+
+    .edit-form-actions {
+        flex-direction: column-reverse;
+    }
+
+    .edit-btn-cancel,
+    .edit-btn-submit {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .edit-alert {
+        margin-right: 16px;
+        margin-left: 16px;
+    }
+}
+
+
+/* Status tombol saat proses upload berlangsung */
+.btn-submit:disabled {
+    opacity: 0.75;
+    cursor: wait;
+    pointer-events: none;
+}
+
+.upload-loading {
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.upload-loading:not([hidden]) {
+    display: inline-flex;
+}
+
+.loading-spinner {
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: upload-spin 0.7s linear infinite;
+    flex-shrink: 0;
+}
+
+@keyframes upload-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

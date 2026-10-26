@@ -1,0 +1,1087 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bf-ink: #203047;
+    --bf-muted: #8490a2;
+    --bf-teal: #1c6d7c;
+    --bf-teal-dark: #155563;
+    --bf-teal-soft: #e8f5f6;
+    --bf-pink: #ed6b7a;
+    --bf-border: #e8edf2;
+    --bf-surface: #ffffff;
+    --bf-page: #f8fafc;
+}
+
+/* =========================
+   HALAMAN
+========================= */
+
+.favorit-page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px 24px 100px;
+    color: var(--bf-ink);
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.favorit-page *,
+.favorit-page *::before,
+.favorit-page *::after {
+    box-sizing: border-box;
+}
+
+.favorit-page a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* =========================
+   HERO / INTRO
+========================= */
+
+.favorit-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 300px;
+    overflow: hidden;
+    padding: 42px 48px;
+    border-radius: 28px;
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(255, 255, 255, 0.15),
+            transparent 28%
+        ),
+        linear-gradient(120deg, #123f50 0%, #1c6d7c 60%, #398f98 100%);
+    color: #fff;
+    box-shadow: 0 18px 45px rgba(21, 85, 99, 0.13);
+}
+
+.favorit-hero-copy {
+    position: relative;
+    z-index: 2;
+    width: 58%;
+    max-width: 570px;
+}
+
+.favorit-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #f5ffff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.favorit-hero h1 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(32px, 4vw, 47px);
+    font-weight: 800;
+    line-height: 1.17;
+    letter-spacing: -1.5px;
+}
+
+.favorit-hero h1 span {
+    color: #b9edf0;
+}
+
+.favorit-hero-copy > p {
+    max-width: 480px;
+    margin: 17px 0 24px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.favorit-explore-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 46px;
+    padding: 0 17px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 12px;
+    color: var(--bf-teal-dark);
+    background: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.favorit-explore-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.14);
+}
+
+.favorit-explore-btn i:last-child {
+    margin-left: 4px;
+}
+
+/* Ilustrasi dekoratif hero */
+
+.favorit-hero-art {
+    position: relative;
+    width: 300px;
+    min-width: 260px;
+    height: 245px;
+    margin-right: 5px;
+}
+
+.favorit-art-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.favorit-art-circle-one {
+    width: 245px;
+    height: 245px;
+}
+
+.favorit-art-circle-two {
+    width: 190px;
+    height: 190px;
+}
+
+.favorit-art-card {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 22px;
+    box-shadow: 0 18px 35px rgba(10, 42, 53, 0.2);
+}
+
+.favorit-art-card-back {
+    top: 35px;
+    left: 43px;
+    width: 145px;
+    height: 155px;
+    color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.13);
+    font-size: 52px;
+    transform: rotate(-12deg);
+}
+
+.favorit-art-card-front {
+    right: 13px;
+    bottom: 30px;
+    width: 158px;
+    height: 126px;
+    gap: 12px;
+    color: #e76578;
+    background: #fff;
+    transform: rotate(7deg);
+}
+
+.favorit-art-card-front > i {
+    font-size: 42px;
+}
+
+.favorit-art-card-front > span {
+    color: var(--bf-ink);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.favorit-art-spark {
+    position: absolute;
+    color: #c7f5ed;
+    font-size: 30px;
+}
+
+.favorit-spark-one {
+    top: 10px;
+    right: 32px;
+}
+
+.favorit-spark-two {
+    bottom: 24px;
+    left: 13px;
+    font-size: 25px;
+}
+
+/* =========================
+   RINGKASAN KOLEKSI
+========================= */
+
+.favorit-overview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 38px 0 25px;
+}
+
+.favorit-overview-text {
+    min-width: 0;
+}
+
+.favorit-overline {
+    display: inline-block;
+    margin-bottom: 7px;
+    color: var(--bf-teal);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.favorit-overview-text h2 {
+    margin: 0;
+    color: var(--bf-ink);
+    font-size: 23px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.favorit-overview-text p {
+    margin: 7px 0 0;
+    color: var(--bf-muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.favorit-count-card {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-width: 205px;
+    padding: 15px 18px;
+    border: 1px solid #e4edef;
+    border-radius: 17px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(28, 66, 78, 0.035);
+}
+
+.favorit-count-icon {
+    display: grid;
+    width: 45px;
+    height: 45px;
+    flex-shrink: 0;
+    place-items: center;
+    border-radius: 14px;
+    color: #e95c70;
+    background: #fff0f2;
+    font-size: 18px;
+}
+
+.favorit-count-card > div {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.favorit-count-card strong {
+    color: var(--bf-ink);
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.favorit-count-card > div > span {
+    color: var(--bf-muted);
+    font-size: 10px;
+}
+
+/* =========================
+   NOTIFIKASI
+========================= */
+
+.favorit-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 22px;
+    padding: 14px 17px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.favorit-notice > i {
+    margin-top: 2px;
+    font-size: 15px;
+}
+
+.favorit-notice-success {
+    border-color: #bbebcf;
+    color: #166534;
+    background: #f0fdf4;
+}
+
+.favorit-notice-error {
+    border-color: #fecaca;
+    color: #b91c1c;
+    background: #fef2f2;
+}
+
+/* =========================
+   HEADER KOLEKSI
+========================= */
+
+.favorit-collection {
+    margin-top: 8px;
+}
+
+.favorit-collection-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.favorit-collection-heading h2 {
+    margin: 0;
+    color: var(--bf-ink);
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+}
+
+.favorit-collection-heading p {
+    margin: 6px 0 0;
+    color: var(--bf-muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.favorit-collection-total {
+    flex-shrink: 0;
+    padding: 7px 11px;
+    border: 1px solid var(--bf-border);
+    border-radius: 9px;
+    color: #64748b;
+    background: #fff;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+/* =========================
+   GRID KARTU FAVORIT
+========================= */
+
+.favorit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 22px;
+}
+
+.favorit-item {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--bf-border);
+    border-radius: 19px;
+    background: var(--bf-surface);
+    box-shadow: 0 6px 22px rgba(28, 45, 67, 0.035);
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+}
+
+.favorit-item:hover {
+    transform: translateY(-5px);
+    border-color: #d6e5e8;
+    box-shadow: 0 15px 35px rgba(28, 45, 67, 0.09);
+}
+
+/* Foto */
+
+.favorit-item-visual {
+    position: relative;
+    height: 225px;
+    overflow: hidden;
+    background: #edf3f5;
+}
+
+.favorit-item-image-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.favorit-item-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.favorit-item:hover .favorit-item-image {
+    transform: scale(1.055);
+}
+
+.favorit-item-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    color: #94a3b8;
+    background:
+        linear-gradient(135deg, #eef4f6, #e2edf0);
+    font-size: 10px;
+}
+
+.favorit-item-placeholder i {
+    font-size: 38px;
+}
+
+/* Label tersimpan */
+
+.favorit-saved-label {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 11px;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 9px;
+    color: var(--bf-teal-dark);
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.06);
+    font-size: 9px;
+    font-weight: 700;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+.favorit-saved-label i {
+    color: var(--bf-teal);
+}
+
+/* Tombol hapus favorit */
+
+.favorit-remove-form {
+    position: absolute;
+    top: 11px;
+    right: 11px;
+    z-index: 2;
+    margin: 0;
+}
+
+.favorit-remove-btn {
+    display: grid;
+    width: 39px;
+    height: 39px;
+    padding: 0;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+    color: #e84f68;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 4px 13px rgba(15, 23, 42, 0.12);
+    font-size: 16px;
+    cursor: pointer;
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.favorit-remove-btn:hover {
+    transform: scale(1.08);
+    color: #fff;
+    background: #e84f68;
+}
+
+/* =========================
+   INFORMASI KARTU
+========================= */
+
+.favorit-item-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 17px 17px 14px;
+}
+
+.favorit-item-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 10px;
+}
+
+.favorit-category,
+.favorit-mode {
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    padding: 5px 8px;
+    border-radius: 7px;
+    font-size: 9px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.favorit-category {
+    color: #65758b;
+    background: #f1f5f9;
+}
+
+.favorit-mode-free {
+    color: #167347;
+    background: #e9f9ef;
+}
+
+.favorit-mode-barter {
+    color: #7452a8;
+    background: #f3edff;
+}
+
+.favorit-item-title-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.favorit-item-title-link h3 {
+    display: -webkit-box;
+    min-height: 45px;
+    overflow: hidden;
+    margin: 0 0 8px;
+    color: var(--bf-ink);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    transition: color 0.2s;
+}
+
+.favorit-item-title-link:hover h3 {
+    color: var(--bf-teal);
+}
+
+/* Harga */
+
+.favorit-item-price {
+    margin: 0 0 14px;
+    color: #159752;
+    font-size: 19px;
+    font-weight: 800;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+/* Lokasi */
+
+.favorit-item-location {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    min-height: 34px;
+    color: var(--bf-muted);
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.favorit-item-location > i {
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: var(--bf-teal);
+}
+
+.favorit-item-location span {
+    overflow-wrap: anywhere;
+}
+
+/* Footer kartu */
+
+.favorit-item-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid #edf1f5;
+}
+
+.favorit-seller {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+    color: #728096;
+    font-size: 10px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.favorit-seller i {
+    flex-shrink: 0;
+    color: #9aa7b8;
+}
+
+.favorit-detail-btn {
+    display: grid;
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+    place-items: center;
+    border: 1px solid #d9e9eb;
+    border-radius: 11px;
+    color: var(--bf-teal);
+    background: #f0f9fa;
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.2s, background 0.2s;
+}
+
+.favorit-detail-btn:hover {
+    color: #fff;
+    background: var(--bf-teal);
+}
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.favorit-empty-state {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 18px;
+    padding: 58px 24px 62px;
+    border: 1px solid var(--bf-border);
+    border-radius: 25px;
+    background:
+        radial-gradient(
+            circle at 50% 12%,
+            #eff9fa 0,
+            #fff 43%
+        );
+    text-align: center;
+}
+
+.favorit-empty-illustration {
+    position: relative;
+    display: grid;
+    width: 145px;
+    height: 135px;
+    margin-bottom: 25px;
+    place-items: center;
+}
+
+.favorit-empty-orbit {
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    border: 1px dashed #b7dce0;
+    border-radius: 50%;
+}
+
+.favorit-empty-heart {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: 85px;
+    height: 85px;
+    place-items: center;
+    border: 1px solid #f8d8de;
+    border-radius: 27px;
+    color: #e96b7b;
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(233, 107, 123, 0.12);
+    font-size: 37px;
+    transform: rotate(-7deg);
+}
+
+.favorit-empty-star {
+    position: absolute;
+    color: #56a9b2;
+    font-size: 23px;
+}
+
+.favorit-empty-star-one {
+    top: 2px;
+    right: 4px;
+}
+
+.favorit-empty-star-two {
+    bottom: 5px;
+    left: 3px;
+}
+
+.favorit-empty-kicker {
+    color: var(--bf-teal);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.favorit-empty-state h2 {
+    margin: 10px 0 8px;
+    color: var(--bf-ink);
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.favorit-empty-state > p {
+    max-width: 440px;
+    margin: 0;
+    color: var(--bf-muted);
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+.favorit-empty-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 45px;
+    margin-top: 23px;
+    padding: 0 17px;
+    border-radius: 12px;
+    color: #fff;
+    background: var(--bf-teal);
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.favorit-empty-btn:hover {
+    transform: translateY(-2px);
+    background: var(--bf-teal-dark);
+}
+
+/* =========================
+   PAGINATION
+========================= */
+
+.favorit-pagination {
+    margin-top: 30px;
+    overflow-x: auto;
+}
+
+.favorit-pagination nav {
+    display: flex;
+    justify-content: center;
+}
+
+.favorit-pagination svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* =========================
+   FOOTER HALAMAN
+========================= */
+
+.favorit-page-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 34px;
+    padding-top: 19px;
+    border-top: 1px solid var(--bf-border);
+    color: #98a3b2;
+    font-size: 10px;
+    text-align: center;
+}
+
+.favorit-page-footer i {
+    color: #e58b99;
+}
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 1000px) {
+    .favorit-hero {
+        padding: 35px;
+    }
+
+    .favorit-hero-art {
+        width: 260px;
+        min-width: 230px;
+        transform: scale(0.9);
+        transform-origin: center right;
+    }
+
+    .favorit-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .favorit-item-visual {
+        height: 230px;
+    }
+}
+
+/* =========================
+   RESPONSIVE HP
+========================= */
+
+@media (max-width: 650px) {
+    .favorit-page {
+        padding: 17px 15px 90px;
+    }
+
+    .favorit-hero {
+        min-height: 0;
+        padding: 28px 23px;
+        border-radius: 22px;
+    }
+
+    .favorit-hero-copy {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .favorit-eyebrow {
+        margin-bottom: 15px;
+        font-size: 9px;
+    }
+
+    .favorit-hero h1 {
+        font-size: clamp(30px, 8vw, 39px);
+    }
+
+    .favorit-hero-copy > p {
+        margin: 14px 0 20px;
+        font-size: 11px;
+    }
+
+    .favorit-explore-btn {
+        min-height: 42px;
+        padding: 0 13px;
+        font-size: 10px;
+    }
+
+    .favorit-hero-art {
+        display: none;
+    }
+
+    .favorit-overview {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+        margin: 29px 0 23px;
+    }
+
+    .favorit-overview-text h2 {
+        font-size: 21px;
+    }
+
+    .favorit-count-card {
+        width: 100%;
+        min-width: 0;
+        padding: 12px 14px;
+        border-radius: 14px;
+    }
+
+    .favorit-count-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+    }
+
+    .favorit-count-card strong {
+        font-size: 20px;
+    }
+
+    .favorit-collection-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .favorit-collection-heading h2 {
+        font-size: 16px;
+    }
+
+    .favorit-collection-heading p {
+        font-size: 10px;
+    }
+
+    .favorit-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 11px;
+    }
+
+    .favorit-item {
+        border-radius: 14px;
+    }
+
+    .favorit-item-visual {
+        height: 155px;
+    }
+
+    .favorit-saved-label {
+        top: 7px;
+        left: 7px;
+        gap: 4px;
+        padding: 6px 7px;
+        border-radius: 7px;
+        font-size: 8px;
+    }
+
+    .favorit-remove-form {
+        top: 7px;
+        right: 7px;
+    }
+
+    .favorit-remove-btn {
+        width: 31px;
+        height: 31px;
+        font-size: 13px;
+    }
+
+    .favorit-item-body {
+        padding: 11px 10px 10px;
+    }
+
+    .favorit-item-meta {
+        gap: 5px;
+        margin-bottom: 7px;
+    }
+
+    .favorit-category,
+    .favorit-mode {
+        padding: 4px 6px;
+        font-size: 8px;
+    }
+
+    .favorit-item-title-link h3 {
+        min-height: 36px;
+        margin-bottom: 6px;
+        font-size: 11px;
+    }
+
+    .favorit-item-price {
+        margin-bottom: 10px;
+        font-size: 13px;
+    }
+
+    .favorit-item-location {
+        gap: 5px;
+        min-height: 38px;
+        font-size: 9px;
+    }
+
+    .favorit-item-footer {
+        gap: 5px;
+        padding-top: 9px;
+    }
+
+    .favorit-seller {
+        gap: 4px;
+        font-size: 8px;
+    }
+
+    .favorit-detail-btn {
+        width: 29px;
+        height: 29px;
+        border-radius: 9px;
+        font-size: 11px;
+    }
+
+    .favorit-empty-state {
+        padding: 40px 18px;
+        border-radius: 20px;
+    }
+
+    .favorit-empty-state h2 {
+        font-size: 21px;
+    }
+
+    .favorit-empty-state > p {
+        font-size: 10px;
+    }
+
+    .favorit-empty-btn {
+        gap: 7px;
+        padding: 0 12px;
+        font-size: 10px;
+    }
+
+    .favorit-page-footer {
+        align-items: flex-start;
+        font-size: 9px;
+        line-height: 1.7;
+    }
+}
+
+/* =========================
+   HP KECIL
+========================= */
+
+@media (max-width: 370px) {
+    .favorit-page {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .favorit-hero {
+        padding: 24px 17px;
+    }
+
+    .favorit-hero h1 {
+        font-size: 29px;
+    }
+
+    .favorit-grid {
+        gap: 8px;
+    }
+
+    .favorit-item-visual {
+        height: 125px;
+    }
+
+    .favorit-item-body {
+        padding: 9px 8px;
+    }
+
+    .favorit-item-price {
+        font-size: 12px;
+    }
+
+    .favorit-saved-label {
+        font-size: 7px;
+    }
+
+    .favorit-remove-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,459 @@
+
+/* =========================================
+   CHAT - GLOBAL
+========================================= */
+
+.chat-page,
+.chat-page *,
+.chat-top-header,
+.chat-top-header * {
+    box-sizing: border-box;
+}
+
+.chat-page {
+    width: 100%;
+    min-height: 70vh;
+    padding: clamp(14px, 2.5vw, 30px);
+    background: #f4f7fb;
+}
+
+/* =========================================
+   HEADER CHAT
+   Tinggi konsisten dengan header aplikasi
+========================================= */
+
+.chat-top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: clamp(64px, 7vw, 88px);
+    padding: 8px clamp(14px, 3vw, 28px);
+    background: #1b6c83;
+    border-bottom: 4px solid #dce8ed;
+    box-shadow: 0 2px 8px rgba(18, 50, 70, 0.08);
+}
+
+.chat-top-brand {
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 1.5vw, 17px);
+    min-width: 0;
+    color: #fff;
+    text-decoration: none;
+}
+
+.chat-top-logo {
+    display: block;
+    flex-shrink: 0;
+    width: clamp(40px, 5vw, 48px);
+    height: clamp(40px, 5vw, 48px);
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.chat-top-brand span {
+    overflow: hidden;
+    font-size: clamp(15px, 1.7vw, 19px);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.chat-top-notification {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.chat-top-notification i {
+    font-size: clamp(19px, 2.2vw, 23px);
+}
+
+.chat-top-notification:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================
+   PEMBUNGKUS KONTEN
+========================================= */
+
+.chat-container {
+    width: 100%;
+    max-width: 1100px;
+    min-width: 0;
+    margin: 0 auto;
+    padding: clamp(20px, 3.5vw, 48px);
+    background: #fff;
+    border: 1px solid #e8eef5;
+    border-radius: clamp(12px, 2vw, 22px);
+    box-shadow: 0 8px 28px rgba(24, 54, 91, 0.05);
+}
+
+/* =========================================
+   JUDUL
+========================================= */
+
+.chat-heading {
+    margin-bottom: clamp(20px, 3vw, 30px);
+}
+
+.chat-heading-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: #0878c9;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.chat-heading h1 {
+    margin: 0;
+    color: #17365f;
+    font-size: clamp(25px, 3vw, 36px);
+    font-weight: 800;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.chat-heading > p {
+    margin: 10px 0 0;
+    color: #7889a2;
+    font-size: clamp(13px, 1.4vw, 15px);
+    line-height: 1.7;
+}
+
+/* =========================================
+   PENCARIAN
+========================================= */
+
+.chat-search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 54px;
+    padding: 0 18px;
+    margin-bottom: 24px;
+    border: 1px solid #dce6f2;
+    border-radius: 32px;
+    background: #f7f9fc;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.chat-search:focus-within {
+    border-color: #4c94c5;
+    box-shadow: 0 0 0 3px rgba(48, 126, 181, 0.1);
+}
+
+.chat-search > i {
+    flex-shrink: 0;
+    color: #8a9bb1;
+    font-size: 18px;
+}
+
+.chat-search input {
+    flex: 1;
+    width: 100%;
+    min-width: 0;
+    padding: 14px 0;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: #233b5b;
+    font: inherit;
+    font-size: 15px;
+}
+
+.chat-search input::placeholder {
+    color: #8796aa;
+}
+
+.chat-search input::-webkit-search-cancel-button {
+    display: none;
+}
+
+.chat-search button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    border-radius: 50%;
+    background: #e6edf5;
+    color: #526a84;
+    cursor: pointer;
+}
+
+.chat-search button[hidden] {
+    display: none;
+}
+
+/* =========================================
+   DAFTAR CHAT
+========================================= */
+
+.chat-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.chat-item {
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 1.5vw, 16px);
+    width: 100%;
+    min-width: 0;
+    padding: clamp(15px, 2vw, 21px) 0;
+    border-top: 1px solid #edf1f6;
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.chat-item:last-of-type {
+    border-bottom: 1px solid #edf1f6;
+}
+
+.chat-item:hover {
+    background: #f8fbff;
+}
+
+.chat-item[hidden] {
+    display: none;
+}
+
+/* =========================================
+   AVATAR
+========================================= */
+
+.chat-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 clamp(42px, 5vw, 56px);
+    width: clamp(42px, 5vw, 56px);
+    height: clamp(42px, 5vw, 56px);
+    border-radius: 50%;
+    color: #fff;
+    font-size: clamp(17px, 2vw, 22px);
+    font-weight: 800;
+}
+
+.chat-avatar-blue {
+    background: #548fab;
+}
+
+.chat-avatar-orange {
+    background: #e47a00;
+}
+
+.chat-avatar-purple {
+    background: #8958f7;
+}
+
+/* =========================================
+   DETAIL CHAT
+========================================= */
+
+.chat-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.chat-info h2 {
+    overflow: hidden;
+    margin: 0 0 6px;
+    color: #152b48;
+    font-size: clamp(13px, 1.5vw, 17px);
+    font-weight: 700;
+    line-height: 1.4;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.chat-info h2 span {
+    font-weight: 500;
+}
+
+.chat-last-message {
+    overflow: hidden;
+    margin: 0;
+    color: #7487a1;
+    font-size: clamp(12px, 1.35vw, 15px);
+    line-height: 1.5;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.chat-last-message strong {
+    color: #516984;
+}
+
+/* =========================================
+   WAKTU DAN BADGE
+========================================= */
+
+.chat-meta {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 7px;
+    min-width: 42px;
+}
+
+.chat-meta time {
+    color: #8393aa;
+    font-size: clamp(10px, 1.1vw, 12px);
+    white-space: nowrap;
+}
+
+.chat-unread {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 21px;
+    height: 21px;
+    padding: 0 6px;
+    border-radius: 50%;
+    background: #f04449;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* =========================================
+   KOSONG
+========================================= */
+
+.chat-empty {
+    padding: 45px 15px;
+    text-align: center;
+}
+
+.chat-empty[hidden] {
+    display: none;
+}
+
+.chat-empty-icon {
+    margin-bottom: 14px;
+    color: #9aaec4;
+    font-size: 38px;
+}
+
+.chat-empty h3 {
+    margin: 0 0 8px;
+    color: #243b59;
+    font-size: 17px;
+}
+
+.chat-empty p {
+    margin: 0;
+    color: #7c8ca3;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 768px) {
+    .chat-container {
+        padding: 26px 22px;
+    }
+
+    .chat-search {
+        min-height: 50px;
+        margin-bottom: 18px;
+    }
+}
+
+/* =========================================
+   HP
+========================================= */
+
+@media (max-width: 480px) {
+    .chat-page {
+        padding: 12px;
+    }
+
+    .chat-container {
+        padding: 22px 15px;
+        border-radius: 14px;
+    }
+
+    .chat-heading-label {
+        font-size: 10px;
+    }
+
+    .chat-heading h1 {
+        font-size: 25px;
+    }
+
+    .chat-search {
+        gap: 9px;
+        min-height: 46px;
+        padding: 0 12px;
+    }
+
+    .chat-search input {
+        padding: 11px 0;
+        font-size: 13px;
+    }
+
+    .chat-item {
+        gap: 10px;
+        padding: 16px 0;
+    }
+
+    .chat-info h2 {
+        margin-bottom: 4px;
+    }
+
+    .chat-meta {
+        min-width: 35px;
+        gap: 6px;
+    }
+
+    .chat-unread {
+        min-width: 19px;
+        height: 19px;
+        font-size: 10px;
+    }
+}
+
+/* HP SANGAT KECIL */
+@media (max-width: 350px) {
+    .chat-container {
+        padding: 18px 10px;
+    }
+
+    .chat-item {
+        gap: 8px;
+    }
+
+    .chat-info h2 {
+        font-size: 12px;
+    }
+
+    .chat-last-message {
+        font-size: 11px;
+    }
+
+    .chat-meta {
+        min-width: 32px;
+    }
+}
