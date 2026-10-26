@@ -1,4 +1,4 @@
-
+﻿
 load("//anybuild/tools:laravel.bzl", "laravel_build", "laravel_config", "laravel_serve")
 
 config = laravel_config(
@@ -8,7 +8,7 @@ config = laravel_config(
     node_version = "24",
     php_framework = "laravel",
     composer_enable = True,
-    php_version = "8.3.29",
+    php_version = "8.4",
     php_public_dir = "public",
 )
 
@@ -22,3 +22,4 @@ laravel_serve(
         copy(".", "/app"),
     ],
 )
+
