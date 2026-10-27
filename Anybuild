@@ -10,6 +10,10 @@ config = laravel_config(
     composer_enable = True,
     php_version = "8.4",
     php_public_dir = "public",
+    commands = {
+        "start": "php artisan serve --host=0.0.0.0 --port=8080",
+        "after_deploy": "php artisan migrate --force",
+    },
 )
 
 build = laravel_build(config)
