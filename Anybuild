@@ -14,7 +14,6 @@ config = laravel_config(
 
 build = laravel_build(config)
 
-
 laravel_serve(
     config,
     build,
@@ -22,9 +21,4 @@ laravel_serve(
     build_pre = [
         copy(".", "/app"),
     ],
-    commands = {
-        "start": "php artisan serve --host=0.0.0.0 --port=8080",
-        "after_deploy": "php artisan migrate --force",
-    },
 )
-
