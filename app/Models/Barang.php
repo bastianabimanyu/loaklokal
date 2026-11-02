@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Barang extends Model
 {
@@ -39,5 +40,13 @@ class Barang extends Model
             'barang_id',
             'user_id'
         )->withTimestamps();
+    }
+
+    /**
+     * Seluruh percakapan yang berkaitan dengan barang ini.
+     */
+    public function conversations(): HasMany
+    {
+        return $this->hasMany(Conversation::class);
     }
 }

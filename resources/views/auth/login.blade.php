@@ -7,7 +7,6 @@
     <title>Login - LoakLokal</title>
 
     @vite(['resources/css/login.css'])
-    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 <body>
     <div class="container">

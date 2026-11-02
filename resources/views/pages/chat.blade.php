@@ -69,97 +69,178 @@
         </div>
 
         {{-- DAFTAR PERCAKAPAN --}}
-        <section class="chat-list" id="chatList">
+        <section
+            class="chat-list"
+            id="chatList"
+            data-current-user="{{ auth()->id() }}"
+            data-token-url="{{ route('chat.list-ably-token') }}"
+        >
 
-            {{-- PERCAKAPAN ALIF --}}
-            <a
-                href="#"
-                class="chat-item"
-                data-nama="Alif"
-                data-peran="Pemilik Barang"
-                data-pesan="Halo kak, barang masih ada? Bisakah saya melihatnya?"
-            >
-                <div class="chat-avatar chat-avatar-blue">A</div>
+            @forelse ($conversations as $conversation)
 
-                <div class="chat-info">
-                    <h2>
-                        Alif <span>(Pemilik Barang)</span>
-                    </h2>
+                @php
+                    $currentUserId = (int) auth()->id();
 
-                    <p class="chat-last-message">
-                        Halo kak, barang masih ada? Bisakah saya melihatnya?
+                    // Tentukan lawan bicara.
+                    $otherUser = $currentUserId === (int) $conversation->buyer_id
+                        ? $conversation->seller
+                        : $conversation->buyer;
+
+                    // Tentukan peran lawan bicara.
+                    $otherRole = $currentUserId === (int) $conversation->buyer_id
+                        ? 'Pemilik Barang'
+                        : 'Pembeli';
+
+                    // Ambil pesan terakhir.
+                    $lastMessage = $conversation->messages->first();
+
+                    // Ambil informasi barang.
+                    $barang = $conversation->barang;
+
+                    // Tentukan teks pesan terakhir.
+                    $lastMessageText = 'Belum ada pesan';
+
+                    if ($lastMessage) {
+                        if ($lastMessage->type === 'image') {
+                            $lastMessageText = 'Mengirim gambar';
+                        } elseif ($lastMessage->type === 'video') {
+                            $lastMessageText = 'Mengirim video';
+                        } elseif ($lastMessage->type === 'location') {
+                            $lastMessageText = 'Membagikan lokasi';
+                        } else {
+                            $lastMessageText = $lastMessage->body ?? 'Pesan';
+                        }
+                    }
+
+                    // Tentukan apakah pesan terakhir dikirim pengguna login.
+                    $isLastMessageMine = $lastMessage
+                        && (int) $lastMessage->sender_id === $currentUserId;
+
+                    // Format waktu pesan terakhir.
+                    $messageTime = '';
+
+                    if ($lastMessage && $lastMessage->created_at) {
+                        if ($lastMessage->created_at->isToday()) {
+                            $messageTime = $lastMessage->created_at->format('H:i');
+                        } elseif ($lastMessage->created_at->isYesterday()) {
+                            $messageTime = 'Kemarin';
+                        } else {
+                            $messageTime = $lastMessage->created_at->translatedFormat('d M');
+                        }
+                    }
+
+                    // Inisial nama untuk avatar.
+                    $initial = $otherUser && $otherUser->name
+                        ? mb_strtoupper(mb_substr($otherUser->name, 0, 1))
+                        : '?';
+
+                    // Data pencarian.
+                    $searchData = implode(' ', [
+                        $otherUser->name ?? '',
+                        $otherRole,
+                        $lastMessageText,
+                        $barang->nama ?? '',
+                    ]);
+                @endphp
+
+                <a
+                    href="{{ route('chat.show', $conversation) }}"
+                    class="chat-item"
+                    data-conversation-id="{{ $conversation->id }}"
+                    data-nama="{{ $otherUser->name ?? '' }}"
+                    data-peran="{{ $otherRole }}"
+                    data-pesan="{{ $searchData }}"
+                >
+
+                    {{-- FOTO PROFIL LAWAN BICARA --}}
+                    @if ($otherUser && $otherUser->profile_photo_path)
+                        <div class="chat-avatar">
+                            <img
+                                src="{{ \Illuminate\Support\Facades\Storage::url($otherUser->profile_photo_path) }}"
+                                alt="{{ $otherUser->name }}"
+                            >
+                        </div>
+                    @else
+                        <div class="chat-avatar chat-avatar-blue">
+                            {{ $initial }}
+                        </div>
+                    @endif
+
+                    {{-- INFORMASI PERCAKAPAN --}}
+                    <div class="chat-info">
+                        <h2>
+                            {{ $otherUser->name ?? 'Pengguna' }}
+                            <span>({{ $otherRole }})</span>
+                        </h2>
+
+                        @if ($barang)
+                            <p class="chat-last-message">
+                                <small>
+                                    {{ $barang->nama }}
+                                </small>
+                            </p>
+                        @endif
+
+                        <p class="chat-last-message">
+                            @if ($isLastMessageMine)
+                                <strong>Anda:</strong>
+                            @endif
+
+                            {{ $lastMessageText }}
+                        </p>
+                    </div>
+
+                    {{-- WAKTU PESAN DAN BADGE UNREAD --}}
+                    <div class="chat-meta">
+                        @if ($messageTime)
+                            <time>
+                                {{ $messageTime }}
+                            </time>
+                        @endif
+
+                        @if (($conversation->unread_count ?? 0) > 0)
+                            <span
+                                class="chat-unread-badge"
+                                aria-label="{{ $conversation->unread_count }} pesan belum dibaca"
+                            >
+                                {{ $conversation->unread_count > 99 ? '99+' : $conversation->unread_count }}
+                            </span>
+                        @endif
+                    </div>
+
+                </a>
+
+            @empty
+
+                {{-- BELUM ADA PERCAKAPAN --}}
+                <div class="chat-empty" id="chatEmpty">
+                    <div class="chat-empty-icon">
+                        <i class="fa-regular fa-comments"></i>
+                    </div>
+
+                    <h3>Belum ada percakapan</h3>
+
+                    <p>
+                        Percakapan dengan pembeli atau penjual akan muncul di sini.
                     </p>
                 </div>
 
-                <div class="chat-meta">
-                    <time>16:35</time>
-                    <span class="chat-unread">1</span>
-                </div>
-            </a>
+            @endforelse
 
-            {{-- PERCAKAPAN RINA --}}
-            <a
-                href="#"
-                class="chat-item"
-                data-nama="Rina"
-                data-peran="Pembeli"
-                data-pesan="Oke, nanti saya siapkan tiketnya."
-            >
-                <div class="chat-avatar chat-avatar-orange">R</div>
+            {{-- HASIL PENCARIAN KOSONG --}}
+            @if ($conversations->isNotEmpty())
+                <div class="chat-empty" id="chatEmpty" hidden>
+                    <div class="chat-empty-icon">
+                        <i class="fa-regular fa-comments"></i>
+                    </div>
 
-                <div class="chat-info">
-                    <h2>
-                        Rina <span>(Pembeli)</span>
-                    </h2>
+                    <h3>Percakapan tidak ditemukan</h3>
 
-                    <p class="chat-last-message">
-                        <strong>Anda:</strong>
-                        Oke, nanti saya siapkan tiketnya.
+                    <p>
+                        Coba gunakan nama atau kata kunci lainnya.
                     </p>
                 </div>
-
-                <div class="chat-meta">
-                    <time>Kemarin</time>
-                </div>
-            </a>
-
-            {{-- PERCAKAPAN DIMAS --}}
-            <a
-                href="#"
-                class="chat-item"
-                data-nama="Dimas"
-                data-peran="Pemilik Barang"
-                data-pesan="Terima kasih banyak kak barangnya sudah diterima."
-            >
-                <div class="chat-avatar chat-avatar-purple">D</div>
-
-                <div class="chat-info">
-                    <h2>
-                        Dimas <span>(Pemilik Barang)</span>
-                    </h2>
-
-                    <p class="chat-last-message">
-                        Terima kasih banyak kak barangnya sudah diterima.
-                    </p>
-                </div>
-
-                <div class="chat-meta">
-                    <time>22 Okt</time>
-                </div>
-            </a>
-
-            {{-- JIKA CHAT TIDAK DITEMUKAN --}}
-            <div class="chat-empty" id="chatEmpty" hidden>
-                <div class="chat-empty-icon">
-                    <i class="fa-regular fa-comments"></i>
-                </div>
-
-                <h3>Percakapan tidak ditemukan</h3>
-
-                <p>
-                    Coba gunakan nama atau kata kunci lainnya.
-                </p>
-            </div>
+            @endif
 
         </section>
 

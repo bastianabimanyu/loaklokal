@@ -13,7 +13,6 @@
     >
 
     @vite(['resources/css/register.css'])
-    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
 </head>
 <body>
     <div class="container">

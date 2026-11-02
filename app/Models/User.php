@@ -67,4 +67,28 @@ class User extends Authenticatable
             'barang_id'
         )->withTimestamps();
     }
+
+    /**
+     * Percakapan yang dimulai sebagai pembeli.
+     */
+    public function percakapanSebagaiPembeli(): HasMany
+    {
+        return $this->hasMany(Conversation::class, 'buyer_id');
+    }
+
+    /**
+     * Percakapan sebagai penjual.
+     */
+    public function percakapanSebagaiPenjual(): HasMany
+    {
+        return $this->hasMany(Conversation::class, 'seller_id');
+    }
+
+    /**
+     * Pesan yang dikirim oleh pengguna.
+     */
+    public function pesanTerkirim(): HasMany
+    {
+        return $this->hasMany(Message::class, 'sender_id');
+    }
 }

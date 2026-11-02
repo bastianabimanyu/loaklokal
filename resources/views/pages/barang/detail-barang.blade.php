@@ -150,9 +150,13 @@
                                     Edit Barang
                                 </a>
                             @elseif ($barang->status === 'tersedia')
-                                <button type="button" class="btn-action btn-chat">
-                                    Chat Penjual
-                                </button>
+                                <form action="{{ route('chat.start', $barang) }}" method="POST">
+                                    @csrf
+
+                                    <button type="submit" class="btn-action btn-chat">
+                                        Chat Penjual
+                                    </button>
+                                </form>
 
                                 <a href="{{ route('beranda') }}" class="btn-action btn-action-primary">
                                     <i class="fa-solid fa-arrow-left"></i>
